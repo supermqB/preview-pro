@@ -11,7 +11,7 @@ import { useUserTheme } from './hooks/useTheme';
 useUserTheme();
 </script>
 
-<style>
+<style lang="scss">
 #app {
   height: 100%;
 }
@@ -71,6 +71,24 @@ useUserTheme();
   to {
     opacity: 0;
     transform: scale3d(0.95, 0.95, 0.95);
+  }
+}
+.ant-layout-content {
+  display: flex;
+}
+
+.ant-pro-basicLayout-content .ant-pro-page-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  .ant-pro-grid-content {
+    flex-grow: 1;
+    .ant-pro-grid-content-children {
+      height: 100%;
+      div {
+        height: 100%;
+      }
+    }
   }
 }
 </style>
