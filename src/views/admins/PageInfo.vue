@@ -51,15 +51,15 @@ import { useRoute } from 'vue-router';
 
 import { storeToRefs } from 'pinia';
 import { useGlobalStore } from '@/stores/useGlobalStore';
-
-const { loading } = storeToRefs(useGlobalStore());
+const store = useGlobalStore();
+const { loading } = storeToRefs(store);
 
 const route = useRoute();
 const operationHandler = () => {
-  console.log('xxxxx');
   loading.value = true;
   setTimeout(() => {
-    loading.value = false;
+    //loading.value = false;
+    store.setLoading(false);
   }, 1000 * 3);
 };
 </script>

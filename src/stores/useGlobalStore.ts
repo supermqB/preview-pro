@@ -7,4 +7,9 @@ export const useGlobalStore = defineStore('storeId', {
       loading: false,
     };
   },
+  actions: {
+    setLoading(loading: boolean) {
+      this.loading = loading;
+    },
+  },
 });

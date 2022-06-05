@@ -3,7 +3,10 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "strict": true,
+    "forceConsistentCasingInFileNames":true,
+    "sourceMap": true,
   },
   "files": [],
   "references": [
