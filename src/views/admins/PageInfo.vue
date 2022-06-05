@@ -27,7 +27,7 @@
       </a-space>
     </template>
     <!-- 主内容区 -->
-    <div style="height: 120vh">
+    <div>
       <a-result
         status="404"
         :style="{

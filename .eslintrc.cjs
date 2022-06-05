@@ -1,21 +1,28 @@
-/* eslint-env node */
-require('@rushstack/eslint-patch/modern-module-resolution');
-
 module.exports = {
   root: true,
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended',
-    '@vue/eslint-config-typescript/recommended',
-    '@vue/eslint-config-prettier',
-    // unplugin-auto-import :: generated automatically
-    './.eslintrc-auto-import.json',
-  ],
   env: {
-    'vue/setup-compiler-macros': true,
+    browser: true,
+    node: true,
   },
-  rules: {
-    // all rules docs https://eslint.org/docs/rules/
-    'prettier/prettier': ['error', { semi: true, singleQuote: true, printWidth: 120 }],
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
   },
+  plugins: ['@typescript-eslint', 'prettier'],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:vue/vue3-recommended',
+    'prettier',
+    'plugin:prettier/recommended',
+  ],
+  // 可以自定义一些校验规则
+  rules: {},
+  overrides: [
+    {
+      files: ['*.vue'],
+      rules: {
+        indent: 'off',
+      },
+    },
+  ],
 };

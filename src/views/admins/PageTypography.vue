@@ -1,5 +1,5 @@
 <template>
-  <a-card>
+  <a-card style="height: 86vh; overflow: auto">
     <a-typography>
       <a-typography-title>Introduction</a-typography-title>
       <a-typography-paragraph>

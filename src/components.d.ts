@@ -13,6 +13,7 @@ declare module 'vue' {
     ADivider: typeof import('ant-design-vue/es')['Divider']
     ADrawer: typeof import('ant-design-vue/es')['Drawer']
     ADropdown: typeof import('ant-design-vue/es')['Dropdown']
+    ALayoutFooter: typeof import('ant-design-vue/es')['LayoutFooter']
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
     APagination: typeof import('ant-design-vue/es')['Pagination']
