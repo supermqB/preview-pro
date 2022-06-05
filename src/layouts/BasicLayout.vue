@@ -58,6 +58,8 @@ import {
   type RouteContextProps,
   GlobalFooter,
 } from '@ant-design-vue/pro-layout';
+import { storeToRefs } from 'pinia';
+import { useGlobalStore } from '@/stores/useGlobalStore';
 
 const router = useRouter();
 const { menuData } = getMenuData(clearMenuItem(router.getRoutes()));
@@ -67,7 +69,8 @@ const state = reactive<Omit<RouteContextProps, 'menuData'>>({
   openKeys: [], // defualt openKeys
   selectedKeys: [], // default selectedKeys
 });
-const loading = ref(false);
+const { loading } = storeToRefs(useGlobalStore());
+//const loading = ref(true);
 const proConfig = ref({
   layout: 'top',
   navTheme: 'light',

@@ -14,7 +14,7 @@
     <template #extra>
       <a-button key="3">操作</a-button>
       <a-button key="2">操作</a-button>
-      <a-button key="1" type="primary">主操作</a-button>
+      <a-button key="1" type="primary" @click="operationHandler">主操作</a-button>
     </template>
     <template #extraContent>
       <a-space>
@@ -49,5 +49,17 @@
 import { LikeOutlined } from '@ant-design/icons-vue';
 import { useRoute } from 'vue-router';
 
+import { storeToRefs } from 'pinia';
+import { useGlobalStore } from '@/stores/useGlobalStore';
+
+const { loading } = storeToRefs(useGlobalStore());
+
 const route = useRoute();
+const operationHandler = () => {
+  console.log('xxxxx');
+  loading.value = true;
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000 * 3);
+};
 </script>
